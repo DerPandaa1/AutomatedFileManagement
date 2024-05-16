@@ -6,45 +6,52 @@ if [[ $boolvar -eq 1 ]]; then
   do 
     case $subject in
       Englisch)
-        mv $file ~/obsidian_vault/1.Jahr/RBBK 1. Jahr/Englisch/src/$file
+        mv $file ~/school/Englisch/
+        echo "Englisch"
         ;;
       GIT)
-        mv $file ~/obsidian_vault/1.Jahr/RBBK 1. Jahr/GIT/src/$file
+        mv $file ~/school/GIT/
+        echo "GIT"
         ;;
       Politik)
-        mv $file ~/obsidian_vault/1.Jahr/RBBK 1. Jahr/Politik/src/$file
+        mv $file ~/school/Politik/
+        echo "Politik"
         ;;
       Deutsch)
-        mv $file ~/obsidian_vault/1.Jahr/RBBK 1. Jahr/Deutsch/src/$file
+        mv $file ~/school/Deutsch/
+        echo "Deutsch"
         ;;
       Wirtschaft)
-        mv $file ~/obsidian_vault/1.Jahr/RBBK 1. Jahr/Wirtschaft/src/$file
+        mv $file ~/school/Wirtschaft/
+        echo "Wirtschaft"
         ;;
       EVP)
-        mv $file ~/obsidian_vault/1.Jahr/RBBK 1. Jahr/EVP/src/$file
+        mv $file ~/school/EVP/
+        echo "EVP"
         ;;
       STD)
-        mv $file ~/obsidian_vault/1.Jahr/RBBK 1. Jahr/STD/src/$file
+        mv $file ~/school/STD/
+        echo "STD"
         ;;
       *)
         case $file in 
           "*.pdf")
-          mv $file ~/Documents/$file
+          mv $file ~/Documents/
             ;;
           "*docx")
-          mv $file ~/Documents/$file
+          mv $file ~/Documents/
             ;;
           "*.pptx")
-          mv $file ~/Documents/$file
+          mv $file ~/Documents/
             ;;
           "*.png")
-          mv $file ~/Pictures/$file
+          mv $file ~/Pictures/
             ;;
           "*.jpg")
-          mv $file ~/Pictures/$file
+          mv $file ~/Pictures/
             ;;
           "*.jpeg")
-          mv $file ~/Pictures/$file
+          mv $file ~/Pictures/
             ;;
         esac
         ;;

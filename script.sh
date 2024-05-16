@@ -1,9 +1,10 @@
 #!/bin/bash
 boolvar=`cat ./automatedMode`
 if [[ $boolvar -eq 1 ]]; then
-  for file in `find ~/Downloads/ -type f -ctime -1`
+  subject=`java -jar ./school.jar`
+  for file in `find ~/Downloads/ -type f -cmin -1`
   do 
-    case in ./school.jar
+    case $subject in
       Englisch)
         mv $file ~/obsidian_vault/1.Jahr/RBBK 1. Jahr/Englisch/src/$file
         ;;
@@ -26,9 +27,27 @@ if [[ $boolvar -eq 1 ]]; then
         mv $file ~/obsidian_vault/1.Jahr/RBBK 1. Jahr/STD/src/$file
         ;;
       *)
-        #others
+        case $file in 
+          "*.pdf")
+          mv $file ~/Documents/$file
+            ;;
+          "*docx")
+          mv $file ~/Documents/$file
+            ;;
+          "*.pptx")
+          mv $file ~/Documents/$file
+            ;;
+          "*.png")
+          mv $file ~/Pictures/$file
+            ;;
+          "*.jpg")
+          mv $file ~/Pictures/$file
+            ;;
+          "*.jpeg")
+          mv $file ~/Pictures/$file
+            ;;
+        esac
         ;;
-
+    esac
   done
-else
 fi

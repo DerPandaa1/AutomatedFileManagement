@@ -1,37 +1,31 @@
 #!/bin/bash
-boolvar=`cat ./automatedMode`
+scriptDir=$(dirname -- "$(readlink -f -- "$BASH_SOURCE")")
+boolvar=`cat $scriptDir/automatedMode`
 if [[ $boolvar -eq 1 ]]; then
-  subject=`java -jar ./school.jar`
+  subject=`java -jar $scriptDir/school.jar`
   for file in `find ~/Downloads/ -type f -cmin -1`
   do 
     case $subject in
       Englisch)
         mv $file ~/school/Englisch/
-        echo "Englisch"
         ;;
       GIT)
         mv $file ~/school/GIT/
-        echo "GIT"
         ;;
       Politik)
         mv $file ~/school/Politik/
-        echo "Politik"
         ;;
       Deutsch)
         mv $file ~/school/Deutsch/
-        echo "Deutsch"
         ;;
       Wirtschaft)
         mv $file ~/school/Wirtschaft/
-        echo "Wirtschaft"
         ;;
       EVP)
         mv $file ~/school/EVP/
-        echo "EVP"
         ;;
       STD)
         mv $file ~/school/STD/
-        echo "STD"
         ;;
       *)
         case $file in 

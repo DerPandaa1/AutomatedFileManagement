@@ -1,9 +1,9 @@
 #!/bin/bash
-boolvar=`cat automatedMode`
+boolvar=`cat ./automatedMode`
 if [[ $boolvar -eq 1 ]]; then
-  for file in `find ~/Downloads/ -type f -mtime -1`
+  for file in `find ~/Downloads/ -type f -ctime -1`
   do 
-    case in #JavaProgram
+    case in ./school.jar
       Englisch)
         mv $file ~/obsidian_vault/1.Jahr/RBBK 1. Jahr/Englisch/src/$file
         ;;
